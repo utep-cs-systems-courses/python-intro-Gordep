@@ -2,8 +2,8 @@ import re
 import sys
 
 
-if len(sys.argv) != 3:
-	print("Start program with args: wordCount.py (input file)  (output file)")
+if len(sys.argv) != 3:# fixed
+	print("Start program with args: wordCount.py (input file) (output file)")
 	exit()
 	
 
@@ -22,13 +22,15 @@ for line in input_file:
 
 		if word in wordList:
 			wordList[word] +=1
+
 		else:
-			if word != ""
+			if word != "":
 				wordList[word] = 1
 	
-	input_file.close()
 
-sortedWords = sorted(iter(wordList.keys()))#
+input_file.close()
+
+sortedWords = sorted(wordList.items())#
 
 for line in sortedWords:
-    output_file.write(line[0] + " " + str(line[1]) + '\n')
+    output_file.write(line[0] + " " + str(line[1]) + '\n')#fixed
